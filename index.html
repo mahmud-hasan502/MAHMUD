@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmud | Public Health Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f9ff;
+            color: #1f2937;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0056b3, #1e88e5);
+            color: white;
+            padding: 70px 20px;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            max-width: 650px;
+        }
+
+        .photo-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .initials-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: white;
+            color: #0056b3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: bold;
+            border: 5px solid rgba(255,255,255,0.4);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            color: #0056b3;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .skill {
+            background: white;
+            padding: 16px;
+            border-left: 5px solid #0056b3;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+        }
+
+        .contact-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #0056b3;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+                flex-direction: column-reverse;
+            }
+
+            .hero-text h1 {
+                font-size: 2.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container hero">
+        <div class="hero-text">
+            <h1>Mahmud</h1>
+            <p>
+                Public health student dedicated to advancing community well-being
+                through evidence-based health promotion and disease prevention.
+            </p>
+        </div>
+
+        <div class="photo-area">
+            <!-- To use your photo instead, replace the DIV below with: <img src="photo.jpg" alt="Mahmud" style="width:180px;height:180px;border-radius:50%;object-fit:cover;border:5px solid rgba(255,255,255,0.4);"> -->
+            <div class="initials-circle">M</div>
+        </div>
+    </div>
+</header>
+
+<section id="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <p>
+            I am a Public Health student expected to graduate in 2028. I chose
+            public health because it offers meaningful career opportunities while
+            allowing me to contribute to improving the well-being of communities.
+        </p>
+        <br>
+        <p>
+            The health issue I care about most is community wellness. I believe
+            that supporting healthy communities can improve quality of life and
+            create better health outcomes for individuals and families.
+        </p>
+        <br>
+        <p>
+            My career goal is to pursue a community health career where I can
+            help promote health, support disease prevention efforts, and make a
+            positive impact through public health practice.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="container">
+        <h2>Skills</h2>
+
+        <div class="skills-list">
+            <div class="skill">Strong Communication</div>
+            <div class="skill">Teamwork</div>
+            <div class="skill">Empathy</div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio">
+    <div class="container">
+        <h2>PH 320 Portfolio — Applied Biostatistics in Public Health, York College CUNY</h2>
+
+        <div class="card-grid">
+
+            <!-- Add Week 3 project link here -->
+            <div class="card">
+                <h3>Week 3</h3>
+                <p>Coming soon.</p>
+            </div>
+
+            <!-- Add Week 4 project link here -->
+            <div class="card">
+                <h3>Week 4</h3>
+                <p>Coming soon.</p>
+            </div>
+
+            <!-- Add Week 5 project link here -->
+            <div class="card">
+                <h3>Week 5</h3>
+                <p>Coming soon.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h2>Contact</h2>
+
+        <div class="contact-box">
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:mahmud.hasan35@login.cuny.edu">
+                    mahmud.hasan35@login.cuny.edu
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Mahmud | Public Health Portfolio</p>
+</footer>
+
+</body>
+</html>
