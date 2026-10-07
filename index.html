@@ -24,6 +24,105 @@
             margin: 0 auto;
         }
 
+        /* Navigation Styles */
+        nav {
+            background: linear-gradient(135deg, #0056b3, #1e88e5);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        .nav-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            opacity: 0.8;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 60px;
+                flex-direction: column;
+                background: linear-gradient(135deg, #0056b3, #1e88e5);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                gap: 0;
+                padding: 20px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 15px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+
         header {
             background: linear-gradient(135deg, #0056b3, #1e88e5);
             color: white;
@@ -147,12 +246,35 @@
             .hero-text h1 {
                 font-size: 2.4rem;
             }
+
+            header {
+                padding: 50px 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
+<!-- Navigation Bar with Hamburger Menu -->
+<nav>
+    <div class="nav-container">
+        <a href="#home" class="nav-logo">Mahmud</a>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+<header id="home">
     <div class="container hero">
         <div class="hero-text">
             <h1>Mahmud</h1>
@@ -163,7 +285,7 @@
         </div>
 
         <div class="photo-area">
-            <!-- To use your photo instead, replace the DIV below with: <img src="photo.jpg" alt="Mahmud" style="width:180px;height:180px;border-radius:50%;object-fit:cover;border:5px solid rgba(255,255,255,0.4);"> -->
+            <!-- To use your photo instead, replace the DIV below with: <img src="photo.jpg" alt="Mahmud" style="width:180px;height:180px;border-radius:50%;object-fit:cover;border:5px solid rgba([...]
             <div class="initials-circle">M</div>
         </div>
     </div>
@@ -210,19 +332,19 @@
 
         <div class="card-grid">
 
-            <!-- Add Week 3 project link here -->
+            <!-- Week 3 project link -->
             <div class="card">
                 <h3>Week 3</h3>
                 <p>Coming soon.</p>
             </div>
 
-            <!-- Add Week 4 project link here -->
+            <!-- Week 4 project link -->
             <div class="card">
                 <h3>Week 4</h3>
                 <p>Coming soon.</p>
             </div>
 
-            <!-- Add Week 5 project link here -->
+            <!-- Week 5 project link -->
             <div class="card">
                 <h3>Week 5</h3>
                 <p>Coming soon.</p>
@@ -250,6 +372,26 @@
 <footer>
     <p>&copy; 2026 Mahmud | Public Health Portfolio</p>
 </footer>
+
+<script>
+    // Hamburger Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
 
 </body>
 </html>
