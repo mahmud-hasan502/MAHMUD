@@ -1,397 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahmud | Public Health Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            background-color: #f5f9ff;
-            color: #1f2937;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        /* Navigation Styles */
-        nav {
-            background: linear-gradient(135deg, #0056b3, #1e88e5);
-            padding: 15px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-            width: 90%;
-        }
-
-        .nav-logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: opacity 0.3s ease;
-        }
-
-        .nav-menu a:hover {
-            opacity: 0.8;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 5px 0;
-            transition: 0.3s;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 60px;
-                flex-direction: column;
-                background: linear-gradient(135deg, #0056b3, #1e88e5);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                gap: 0;
-                padding: 20px 0;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-menu a {
-                display: block;
-                padding: 15px;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-        }
-
-        header {
-            background: linear-gradient(135deg, #0056b3, #1e88e5);
-            color: white;
-            padding: 70px 20px;
-        }
-
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .hero-text {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        .hero-text p {
-            font-size: 1.15rem;
-            max-width: 650px;
-        }
-
-        .photo-area {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .initials-circle {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: white;
-            color: #0056b3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            font-weight: bold;
-            border: 5px solid rgba(255,255,255,0.4);
-        }
-
-        section {
-            padding: 60px 0;
-        }
-
-        h2 {
-            color: #0056b3;
-            margin-bottom: 20px;
-            font-size: 2rem;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 24px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .card h3 {
-            color: #0056b3;
-            margin-bottom: 10px;
-        }
-
-        .skills-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-        }
-
-        .skill {
-            background: white;
-            padding: 16px;
-            border-left: 5px solid #0056b3;
-            border-radius: 8px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-        }
-
-        .contact-box {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        a {
-            color: #0056b3;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #0056b3;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                text-align: center;
-                flex-direction: column-reverse;
-            }
-
-            .hero-text h1 {
-                font-size: 2.4rem;
-            }
-
-            header {
-                padding: 50px 20px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mahmud Hasan’s public health portfolio: community wellness, applied biostatistics, and evidence-based thinking.">
+<title>Public Health Portfolio | Mahmud Hasan</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<!-- Navigation Bar with Hamburger Menu -->
-<nav>
-    <div class="nav-container">
-        <a href="#home" class="nav-logo">Mahmud</a>
-        <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap nav">
+<a class="brand" href="index.html">MH<span>Mahmud Hasan<small>PUBLIC HEALTH PORTFOLIO</small>
+</span>
+</a>
+<nav aria-label="Main navigation">
+<a href="index.html#portfolio">Coursework</a>
+<a href="index.html#about">About</a>
+<a href="index.html#contact">Contact ↗</a>
 </nav>
-
-<header id="home">
-    <div class="container hero">
-        <div class="hero-text">
-            <h1>Mahmud</h1>
-            <p>
-                Public health student dedicated to advancing community well-being
-                through evidence-based health promotion and disease prevention.
-            </p>
-        </div>
-
-        <div class="photo-area">
-            <!-- To use your photo instead, replace the DIV below with: <img src="photo.jpg" alt="Mahmud" style="width:180px;height:180px;border-radius:50%;object-fit:cover;border:5px solid rgba([...]
-            <div class="initials-circle">M</div>
-        </div>
-    </div>
+</div>
 </header>
-
-<section id="about">
-    <div class="container">
-        <h2>About Me</h2>
-        <p>
-            I am a Public Health student expected to graduate in 2028. I chose
-            public health because it offers meaningful career opportunities while
-            allowing me to contribute to improving the well-being of communities.
-        </p>
-        <br>
-        <p>
-            The health issue I care about most is community wellness. I believe
-            that supporting healthy communities can improve quality of life and
-            create better health outcomes for individuals and families.
-        </p>
-        <br>
-        <p>
-            My career goal is to pursue a community health career where I can
-            help promote health, support disease prevention efforts, and make a
-            positive impact through public health practice.
-        </p>
-    </div>
+<main id="main">
+<section class="hero wrap">
+<div>
+<p class="eyebrow">PUBLIC HEALTH / CLASS OF 2028</p>
+<h1>Better questions.<br>Healthier <em>communities.</em>
+</h1>
+<p class="intro">I’m Mahmud, a public health student exploring how evidence can inform prevention, strengthen communities, and improve everyday well-being.</p>
+<a class="button" href="#portfolio">Explore my coursework <span>↗</span>
+</a>
+</div>
+<aside class="hero-art" aria-label="Portfolio focus: evidence, people, prevention">
+<div class="orbit orbit-one">
+</div>
+<div class="orbit orbit-two">
+</div>
+<div class="art-center">Community<br>
+<em>comes first.</em>
+</div>
+<span class="art-label label-one">01 / EVIDENCE</span>
+<span class="art-label label-two">02 / PEOPLE</span>
+<span class="art-label label-three">03 / PREVENTION</span>
+<span class="art-note">A PUBLIC HEALTH PERSPECTIVE</span>
+</aside>
 </section>
-
-<section id="skills">
-    <div class="container">
-        <h2>Skills</h2>
-
-        <div class="skills-list">
-            <div class="skill">Strong Communication</div>
-            <div class="skill">Teamwork</div>
-            <div class="skill">Empathy</div>
-        </div>
-    </div>
+<div class="course-strip">
+<div class="wrap">
+<span>YORK COLLEGE, CUNY</span>
+<span>PH 320 · Applied Biostatistics in Public Health</span>
+<span>Learning in practice ↘</span>
+</div>
+</div>
+<section id="portfolio" class="wrap section">
+<div class="section-heading">
+<div>
+<p class="eyebrow">THE PORTFOLIO</p>
+<h2>From data to understanding.</h2>
+</div>
+<p>A collection of coursework examining study design, statistical relationships, and what the evidence can tell us.</p>
+</div>
+<div class="projects">
+<a class="project" href="cross.sectional.html">
+<div class="project-art study-art" aria-hidden="true">
+<span class="chart-dot d1">
+</span>
+<span class="chart-dot d2">
+</span>
+<span class="chart-dot d3">
+</span>
+<span class="chart-dot d4">
+</span>
+<span class="chart-dot d5">
+</span>
+<div class="art-caption">A snapshot.<br>Not the whole story.</div>
+</div>
+<div class="project-content">
+<div class="project-meta">
+<span>01 / STUDY DESIGN</span>
+<span>READ THE REPORT ↗</span>
+</div>
+<h3>Cross-sectional studies<br>& causal claims</h3>
+<p>Exercise, depressive symptoms, and the difference between finding a relationship and establishing cause.</p>
+<span class="tag">Critical interpretation</span>
+</div>
+</a>
+<a class="project" href="regression.html">
+<div class="project-art regression-art" aria-hidden="true">
+<div class="bars">
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+</div>
+<div class="art-caption">Making sense<br>of the relationship.</div>
+</div>
+<div class="project-content">
+<div class="project-meta">
+<span>02 / REGRESSION ANALYSIS</span>
+<span>READ THE REPORT ↗</span>
+</div>
+<h3>Smoking &<br>psychological distress</h3>
+<p>Interpreting correlation, slope, and statistical significance to communicate a regression analysis clearly.</p>
+<span class="tag">Applied biostatistics</span>
+</div>
+</a>
+</div>
+<p class="portfolio-note">Both available reports are collected here. New coursework will be added as it is completed.</p>
 </section>
-
-<section id="portfolio">
-    <div class="container">
-        <h2>PH 320 Portfolio — Applied Biostatistics in Public Health, York College CUNY</h2>
-
-        <div class="card-grid">
-
-            <!-- Week 3 project link -->
-            <div class="card">
-                <h3>Week 3</h3>
-                <p>Coming soon.</p>
-            </div>
-
-            <!-- Week 4 project link -->
-            <div class="card">
-                <h3>Week 4</h3>
-                <p>Coming soon.</p>
-            </div>
-
-            <!-- Week 5 project link -->
-            <div class="card">
-                <h3>Week 5</h3>
-                <p>Coming soon.</p>
-            </div>
-
-        </div>
-    </div>
+<section id="about" class="about">
+<div class="wrap about-grid">
+<div>
+<p class="eyebrow">BEHIND THE WORK</p>
+<h2>A focus on<br>
+<em>community wellness.</em>
+</h2>
+<p class="education">Public Health student<br>Expected graduation · 2028</p>
+</div>
+<div>
+<p>I chose public health because it offers meaningful opportunities to improve the well-being of communities. Supporting healthy communities can improve quality of life for individuals and families.</p>
+<p>My goal is a career in community health: promoting health, supporting disease prevention, and making a positive impact through public health practice.</p>
+<h3 class="skills-heading">What I bring to the work</h3>
+<ul class="skills">
+<li>Communication</li>
+<li>Teamwork</li>
+<li>Empathy</li>
+</ul>
+</div>
+</div>
 </section>
-
-<section id="contact">
-    <div class="container">
-        <h2>Contact</h2>
-
-        <div class="contact-box">
-            <p>
-                <strong>Email:</strong>
-                <a href="mailto:mahmud.hasan35@login.cuny.edu">
-                    mahmud.hasan35@login.cuny.edu
-                </a>
-            </p>
-        </div>
-    </div>
+<section id="contact" class="wrap contact section">
+<div>
+<p class="eyebrow">LET’S CONNECT</p>
+<h2>Good health starts<br>with a conversation.</h2>
+</div>
+<a class="contact-link" href="mailto:mahmud.hasan35@login.cuny.edu">mahmud.hasan35@login.cuny.edu <span>↗</span>
+</a>
 </section>
-
-<footer>
-    <p>&copy; 2026 Mahmud | Public Health Portfolio</p>
+</main>
+<footer class="site-footer wrap">
+<span>© 2026 Mahmud Hasan</span>
+<span>Public health · York College, CUNY</span>
+<a href="index.html#portfolio">Explore the portfolio ↑</a>
 </footer>
-
-<script>
-    // Hamburger Menu Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // Close menu when a link is clicked
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-</script>
-
 </body>
 </html>
