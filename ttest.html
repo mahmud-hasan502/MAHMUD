@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Writing Hand vs. Other Hand Writing Challenge | Mahmud Hasan</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body{line-height:1.8}
+.study-container{max-width:700px;margin:40px auto;padding:0 20px}
+.study-container h1{line-height:1.3}
+.study-container h2{margin-top:35px}
+.table-scroll{overflow-x:auto;margin:20px 0}
+.study-container table{border-collapse:collapse;width:100%;min-width:570px;font-size:.9rem}
+.study-container th,.study-container td{padding:12px 10px;border-bottom:1px solid #dce3eb;text-align:left;vertical-align:top}
+.study-container th{background:#eaf1f8;color:#173b60}
+.study-container tbody tr:nth-child(even){background:#f7f9fc}
+.study-container .results td:not(:first-child){white-space:nowrap;text-align:right}
+.study-container footer{margin-top:35px;border-top:1px solid #ddd;padding:20px 0;font-size:.8rem}
+.menu-dropdown{position:relative}
+.menu-dropdown summary{cursor:pointer;list-style:none;font-weight:700;padding:10px 14px;border:1px solid currentColor;border-radius:8px}
+.menu-dropdown summary::-webkit-details-marker{display:none}
+.menu-links{position:absolute;right:0;top:100%;z-index:100;background:#fff;color:#173b60;min-width:220px;padding:12px;border:1px solid #dce3eb;border-radius:10px;box-shadow:0 10px 28px #0002;display:flex;flex-direction:column;gap:4px}
+.menu-links a{display:block;padding:9px 12px;color:#173b60;text-decoration:none}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap nav">
+<a class="brand" href="index.html">MH<span>Mahmud Hasan<small>PUBLIC HEALTH PORTFOLIO</small></span></a>
+<nav aria-label="Main navigation">
+<details class="menu-dropdown">
+<summary aria-label="Open navigation menu">☰ <span>Menu</span></summary>
+<div class="menu-links">
+<a href="index.html#portfolio">Coursework</a>
+<a href="ttest.html">Writing Hand Challenge</a>
+<a href="index.html#about">About</a>
+<a href="index.html#contact">Contact ↗</a>
+</div>
+</details>
+</nav>
+</div></header>
+<main class="study-container">
+<h1>My Writing Hand vs. Other Hand Writing Challenge</h1>
+<section><h2>What We Did</h2>
+<p>In our class, we compared how many times we could write the same sentence using our writing hand and other hand in 30 seconds. Our professor collected everyone's results and made one table for the whole class. We all used the same table to analyze the data and compare our results. One limitation is that students have different writing speeds, and 30 seconds may not be enough to measure their actual writing ability.</p></section>
+<section><h2>My Results</h2><div class="table-scroll"><table class="results">
+<thead><tr><th>Test</th><th>Mean 1</th><th>Mean 2</th><th>Difference</th><th>p-value</th></tr></thead>
+<tbody>
+<tr><td>One-sample t-test (Class vs. Dr. Jacques)</td><td><strong>6.333</strong></td><td><strong>8.000</strong></td><td><strong>−1.667</strong></td><td><strong>0.001053</strong></td></tr>
+<tr><td>Independent-samples t-test (Yes vs. No, Welch)</td><td><strong>6.400</strong></td><td><strong>6.250</strong></td><td><strong>0.150</strong></td><td><strong>0.848083</strong></td></tr>
+<tr><td>Paired-samples t-test (Writing vs. Other hand)</td><td><strong>6.333</strong></td><td><strong>2.556</strong></td><td><strong>3.778</strong></td><td><strong>0.00000647</strong></td></tr>
+</tbody></table></div></section>
+<section><h2>The Three Write-Ups</h2><div class="table-scroll"><table>
+<thead><tr><th>Test</th><th>Direction</th><th>Size</th><th>Belief (Significance)</th></tr></thead>
+<tbody>
+<tr><td>1. One-sample t-test</td><td>Higher or lower than the professor's count</td><td>Difference between the class mean and professor's count</td><td>p &lt; 0.05 means statistically significant</td></tr>
+<tr><td>2. Independent-samples t-test</td><td>Yes group higher or lower than No group</td><td>Difference between the two group means</td><td>p &lt; 0.05 means statistically significant</td></tr>
+<tr><td>3. Paired-samples t-test</td><td>Writing hand higher or lower than other hand</td><td>Mean difference between the two hands</td><td>p &lt; 0.05 means statistically significant</td></tr>
+</tbody></table></div></section>
+<section><h2>In Plain Words</h2><p>The one-sample t-test compares the class’s writing-hand average with the professor’s count. The independent-samples t-test compares the writing-hand averages of the Yes and No groups. The paired-samples t-test compares students’ writing-hand and other-hand counts to see whether there is a statistically significant difference.</p></section>
+<section><h2>What I Would Do Differently</h2><p>This study has some limitations. First, the sample size is small, so the results may not represent everyone. Second, students may have different writing speeds and levels of practice. Finally, the 30-second time limit may affect their performance.</p></section>
+<a href="index.html">Home</a>
+<footer>Mahmud Hasan<br>PH 320 · Applied Biostatistics in Public Health</footer>
+</main>
+</body>
+</html>
