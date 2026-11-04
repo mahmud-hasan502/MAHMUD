@@ -6,6 +6,14 @@
 <meta name="description" content="Mahmud Hasan’s public health portfolio: community wellness, applied biostatistics, and evidence-based thinking.">
 <title>Public Health Portfolio | Mahmud Hasan</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+.menu-dropdown{position:relative}
+.menu-dropdown summary{cursor:pointer;list-style:none;font-weight:700;padding:10px 14px;border:1px solid currentColor;border-radius:8px}
+.menu-dropdown summary::-webkit-details-marker{display:none}
+.menu-links{position:absolute;right:0;top:100%;z-index:100;background:#fff;color:#173b60;min-width:220px;padding:12px;border:1px solid #dce3eb;border-radius:10px;box-shadow:0 10px 28px #0002;display:flex;flex-direction:column;gap:4px}
+.menu-links a{display:block;padding:9px 12px;color:#173b60;text-decoration:none}
+.menu-links a:hover{background:#eef4fa;border-radius:5px}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -15,9 +23,15 @@
 </span>
 </a>
 <nav aria-label="Main navigation">
+<details class="menu-dropdown">
+<summary aria-label="Open navigation menu">☰ <span>Menu</span></summary>
+<div class="menu-links">
 <a href="index.html#portfolio">Coursework</a>
+<a href="ttest.html">Writing Hand Challenge</a>
 <a href="index.html#about">About</a>
 <a href="index.html#contact">Contact ↗</a>
+</div>
+</details>
 </nav>
 </div>
 </header>
